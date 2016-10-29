@@ -8,6 +8,9 @@ class WelcomeController < ApplicationController
   def country_profile
   end
 
+  def homepage
+  end
+
   def test
   	response = HTTParty.get("http://api.wunderground.com/api/#{ENV['wunderground_api_key']}/geolookup/conditions/q/GA/Atlanta.json")
 

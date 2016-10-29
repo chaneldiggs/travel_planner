@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function (){
+
 
   function initialize() {
   	var atlanta = new google.maps.LatLng(33.751703, -84.389920);
@@ -26,33 +26,61 @@ $(document).ready(function (){
 		var bali = new google.maps.LatLng(-8.724020, 115.171245);
 
     var mapOptions = {
-    center: {lat: 33.166733, lng: -7.745211},
-    zoom: 3,
+    center: {lat: 33.852615, lng: 33.967137},
+    zoom: 2,
     scrollwheel: false
     };
       
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);  
 
-		var marker = new google.maps.Marker({
+
+		var atlanta_marker = new google.maps.Marker({
 		  position: atlanta,
 		  map: map,
-		  title: 'Atlanta',
+		  title: 'Atlanta, Georgia',
 		  animation: google.maps.Animation.DROP
 		});
 
-		var atlanta = '<a href="test">Atlanta, GA</a>' 
+		var marker = new google.maps.Marker({
+		  position: caracas,
+		  map: map,
+		  title: 'Caracas, Venezuela',
+		  animation: google.maps.Animation.DROP
+		});	
 
-		var infowindow = new google.maps.InfoWindow({
-		  content: atlanta
+			var marker = new google.maps.Marker({
+		  position: nairobi,
+		  map: map,
+		  title: 'Nairobi, Kenya',
+		  animation: google.maps.Animation.DROP
+		});	
+
+			var marker = new google.maps.Marker({
+		  position: london,
+		  map: map,
+		  title: 'London, United Kingdom',
+		  animation: google.maps.Animation.DROP
+		});	
+
+			var marker = new google.maps.Marker({
+		  position: bali,
+		  map: map,
+		  title: 'Bali, Indonesia',
+		  animation: google.maps.Animation.DROP
 		});
 
-		marker.addListener('click', function() {
-			infowindow.open(map,marker);
-		});
 
   }
     
   google.maps.event.addDomListener(window, 'load', initialize);
 
-  
+
+
+  	document.getElementById("load_pg").onclick = function() {
+		window.location.href = "index";
+	};
+
+	  	document.getElementById("atlanta_box").onclick = function() {
+		window.location.href = "test";
+	};
 });
