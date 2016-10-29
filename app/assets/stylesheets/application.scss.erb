@@ -18,8 +18,23 @@
  @import "bootstrap";
  @import "font-awesome";
 
+html,
 body {
-	background-color: #4b4a4a;
+	height: 100%;
+	background: url(<%= asset_path "globes.jpeg" %>), no-repeat center center fixed;
+	background-size: cover;
+	color: white;
+}
+
+#atlanta_test {
+	height: 100%;
+	background: url(<%= asset_path "atl.jpeg" %>), no-repeat center center fixed;
+	background-size: cover;
+}
+
+
+.world_map {
+	width: 100%;
 }
 
 .row {
@@ -30,9 +45,13 @@ body {
 	text-align: center;
 }
 
+.vertical_center {
+	vertical-align: middle;
+}
+
 #map-canvas {
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
@@ -47,5 +66,12 @@ body {
 	background-color: rgba(109, 109, 108, 0.5);
 }
 
+#invisible {
+	display: none;
+}
+
+.destination_header {
+	height: 60px;
+}
 
 

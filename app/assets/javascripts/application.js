@@ -75,12 +75,12 @@ $(document).ready(function (){
   google.maps.event.addDomListener(window, 'load', initialize);
 
 
+  $("#load_pg").click(function() {
+  	$(this).slideUp()
+	  	$("#sample_destinations").removeClass("invisible")
+  });
 
-  	document.getElementById("load_pg").onclick = function() {
-		window.location.href = "index";
-	};
-
-	  	document.getElementById("atlanta_box").onclick = function() {
+	  document.getElementById("atlanta_box").onclick = function() {
 		window.location.href = "test";
 	};
 });
