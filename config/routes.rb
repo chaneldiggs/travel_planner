@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
+  resources :trips
   devise_for :users
   root 'welcome#homepage'
 
   get 'index' => 'welcome#index'
 
   get 'about' => 'welcome#about'
-
-  get 'country_profile' => 'welcome#country_profile'
 
   get 'test' => 'welcome#test'
 

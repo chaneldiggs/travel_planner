@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 $(document).ready(function (){
@@ -41,38 +43,37 @@ $(document).ready(function (){
 		  animation: google.maps.Animation.DROP
 		});
 
-		var marker = new google.maps.Marker({
+		var caracas_marker = new google.maps.Marker({
 		  position: caracas,
 		  map: map,
 		  title: 'Caracas, Venezuela',
 		  animation: google.maps.Animation.DROP
 		});	
 
-			var marker = new google.maps.Marker({
+			var nairobi_marker = new google.maps.Marker({
 		  position: nairobi,
 		  map: map,
 		  title: 'Nairobi, Kenya',
 		  animation: google.maps.Animation.DROP
 		});	
 
-			var marker = new google.maps.Marker({
+			var london_marker = new google.maps.Marker({
 		  position: london,
 		  map: map,
 		  title: 'London, United Kingdom',
 		  animation: google.maps.Animation.DROP
 		});	
 
-			var marker = new google.maps.Marker({
+			var bali_marker = new google.maps.Marker({
 		  position: bali,
 		  map: map,
 		  title: 'Bali, Indonesia',
 		  animation: google.maps.Animation.DROP
 		});
-
-
   }
     
   google.maps.event.addDomListener(window, 'load', initialize);
+
 
 
   $("#load_pg").click(function() {
@@ -80,7 +81,24 @@ $(document).ready(function (){
 	  	$("#sample_destinations").removeClass("invisible")
   });
 
-	  document.getElementById("atlanta_box").onclick = function() {
-		window.location.href = "test";
-	};
+  $('#atlanta_box').click(function(){
+  	window.location.href = "test?city=Atlanta&state=GA&lat=33.751703&lng=-84.389920";
+  })	
+
+  $('#caracas_box').click(function(){
+  	window.location.href = "test?city=Caracas&country=Venezuela&lat=10.471115&lng=-66.897739";
+  })
+  
+  $('#nairobi_box').click(function(){
+  	window.location.href = "test?city=Nairobi&country=Kenya&lat=-1.283496&lng=36.820886";
+  })
+
+  $('#london_box').click(function(){
+  	window.location.href = "test?city=London&country=United_Kingdom&lat=51.529964&lng=-0.127682";
+  })
+
+  $('#bali_box').click(function(){
+  	window.location.href = "test?city=Bali&country=Indonesia&lat=-8.724020&lng=115.171245";
+  })
+
 });

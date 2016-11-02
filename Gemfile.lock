@@ -40,7 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.4)
-    autoprefixer-rails (6.5.1)
+    autoprefixer-rails (6.5.1.1)
       execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -50,8 +50,16 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap3-datetimepicker-rails (4.0.0)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (9.0.6)
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -73,7 +81,7 @@ GEM
     ffi (1.9.14)
     figaro (1.1.1)
       thor (~> 0.14)
-    font-awesome-rails (4.6.3.1)
+    font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -99,8 +107,11 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    momentjs-rails (2.15.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     nio4r (1.2.1)
@@ -141,7 +152,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.3.0)
-    rb-fsevent (0.9.7)
+    rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     responders (2.3.0)
@@ -172,11 +183,11 @@ GEM
     tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.2)
+    uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.3.1)
+    web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
@@ -195,7 +206,9 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootstrap-sass
+  bootstrap3-datetimepicker-rails (~> 4.0.0)
   byebug
+  carrierwave
   coffee-rails (~> 4.2)
   devise
   figaro
@@ -204,6 +217,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  momentjs-rails (>= 2.9.0)
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)

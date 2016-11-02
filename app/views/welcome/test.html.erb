@@ -1,10 +1,24 @@
 <div class="container" id="atlanta_test">	
-	<div class="row center">
-		<h1>Atlanta, Georgia</h1>
-		<h4><%= @time.strftime("%b %d, %Y | %I:%M %P") %></h4>
-		<p>&#42;Need to replace the background&#42;</p>
+	<p class="right">
+			<%= link_to "My Trips", trips_path %>
+	</p>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-body" id="map-canvas2"></div>
+			<div class="panel-body" id="map-canvas3"></div>
+		</div>		
 	</div>
 
+	<div class="row center">
+		<% if @state != nil %>
+			<h1><%= "#{@city}, #{@state}" %></h1>
+		<% else %>
+			<h1><%= "#{@city}, #{@country}" %></h1>
+		<% end %>	
+		<h4><%= @local_time %></h4>
+		<p>&#42;Need to replace the background&#42;</p>
+	</div>
 
 	<div class="row">
 		<div class="col-md-4">
@@ -20,13 +34,59 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="well">
-				<a class="twitter-timeline"  href="https://twitter.com/hashtag/Atlanta" data-widget-id="789589526893256704"  data-chrome="noheader nofooter noborders noscrollbar transparent" data-link-color="000000" tweet-limit="2">#Atlanta Tweets</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				          
-
-				<a class="twitter-timeline"  href="https://twitter.com/hashtag/Atlanta" data-widget-id="789589526893256704" data-chrome="noheader nofooter noborders noscrollbar transparent" data-link-color="000000" tweet-limit="2">#Atlanta Tweets</a>
+				<% case @city %>
+					<% when "Atlanta" %>
+						<a class="twitter-timeline"  href="https://twitter.com/hashtag/atlanta" data-widget-id="789589526893256704">#Atlanta Tweets</a>
+					<% when "Caracas" %>
+				   	<a class="twitter-timeline"  href="https://twitter.com/hashtag/caracas" data-widget-id="793629432212754432">#caracas Tweets</a>
+				  <% when "Nairobi"%>
+				    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Nairobi" data-widget-id="793632825903816704">#Nairobi Tweets</a>
+				  <% when "London"%>
+				    <a class="twitter-timeline"  href="https://twitter.com/hashtag/London" data-widget-id="793634642654101504">#London Tweets</a>
+				  <% when "Bali"%>
+				    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Bali" data-widget-id="793634811948720128">#Bali Tweets</a>
+			  <% end %>
+			 	
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	  function initialize() {
+	  var location = new google.maps.LatLng("<%= @lat %>", "<%= @lng %>");
+	  	
+  	var mapOptions = {
+    center: location,
+    zoom: 10,
+    scrollwheel: false
+    };
+
+   	var map2 = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions); 
+	  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+</script>
+
+<!-- <script type="text/javascript">
+	  function initialize() {
+	  var location = new google.maps.LatLng("<%= @lat %>", "<%= @lng %>");
+	  	
+  	var mapOptions = {
+    center: location,
+    zoom: 5,
+    scrollwheel: false
+    };
+
+   	var map3 = new google.maps.Map(document.getElementById('map-canvas3'), mapOptions); 
+	  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+
+</script> -->

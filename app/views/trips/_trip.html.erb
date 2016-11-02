@@ -1,0 +1,11 @@
+	<div class="col-md-4">
+		<div class="well trip-well">
+			<h3><%= link_to trip.name, trip, class: "trip-link" %></h3>
+			<%= trip.dates %>
+			<%= trip.return_date %>
+			<%= trip.city %>, <%= trip.country %>
+			Departing Flight #: <%= trip.departing_flight %>
+			Return Flight #: <%= trip.return_flight %>
+		</div>
+	</div>
+

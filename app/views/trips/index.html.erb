@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-12 center">
+    <%= link_to new_trip_path, class:"add-trip-link", remote:true do %>
+      <i class="fa fa-plane"></i> Add Trip
+    <% end %>
+    <div id="trip-form" style="display:none;"></div>
+  </div>
+</div>
+
+<h2 class="center">My Trips</h2>
+
+
+<%= render @trips %>
+
+
+
+
+
+
+
+

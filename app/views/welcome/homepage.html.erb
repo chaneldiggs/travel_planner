@@ -1,11 +1,13 @@
-<div id="load_pg">
-	<div class="well">
-		<h1 class="center">Let's Explore!</h1>
-	</div>
+<div id="load_pg" class="center">
+		<h1>Let's Explore!</h1>
+		<%= image_tag "spinning_globe.gif", class:"globe"%>
 </div>
 
 <div class="invisible" id="sample_destinations">
 	<div class ="container">
+		<p class="right">
+			<%= link_to "My Trips", trips_path %>
+		</p>
 		<div class="row destination_header">
 			<div class="center">
 				<h1>Sample Destinations</h1>
@@ -30,7 +32,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<div class="well">
+				<div class="well" id="caracas_box">
 					<%= image_tag "caracas_monument.jpeg", class: "images" %>
 					<%= image_tag "caracas_teleferico.jpeg", class: "images" %>
 					<%= image_tag "caracas_view.jpeg", class: "images" %>
@@ -39,7 +41,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<div class="well">
+				<div class="well" id="london_box">
 					<%= image_tag "london.jpeg", class: "images" %>
 					<%= image_tag "london_eye.jpeg", class: "images" %>
 					<%= image_tag "london_stonehenge.jpeg", class: "images" %>
@@ -49,16 +51,16 @@
 		</div>
 
 		<div class="row center">
-			<div class="col-md-4 preview_box">
-				<div class="well">
+			<div class="col-md-4">
+				<div class="well" id="nairobi_box">
 					<%= image_tag "nairobi_natl_museum.jpeg", class: "images" %>
 					<%= image_tag "nairobi_natl_park.jpeg", class: "images" %>
 					<%= image_tag "nairobi_view.jpeg", class: "images" %>
 					<h3> Nairobi, Kenya </h3>
 				</div>
 			</div>
-			<div class="col-md-4 preview_box">
-				<div class="well">
+			<div class="col-md-4">
+				<div class="well" id="bali_box">
 					<%= image_tag "bali.jpeg", class: "images" %>
 					<%= image_tag "bali_waterpark.jpeg", class: "images" %>
 					<%= image_tag "bali_ocean.jpeg", class: "images" %>
