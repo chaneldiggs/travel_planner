@@ -1,14 +1,12 @@
-	<div class="col-md-6">
+	<div class="col-md-4 col-md-offset-4">
 		<div class="trip-well center">
 			<% if trip.image != nil %>
 				<%= image_tag trip.image, class: "trip-photo" %>
 			<% end %>
 			<h3><%= link_to trip.name, trip, class: "trip-link" %></h3>
-			<%= trip.dates %>
-			<%= trip.return_date %>
-			<%= trip.city %>, <%= trip.country %>
-			Departing Flight #: <%= trip.departing_flight %>
-			Return Flight #: <%= trip.return_flight %>
+			<p><%= trip.dates %></p>
+			<p><%= trip.return_date %></p>
+			<p><%= trip.city %>, <%= trip.country %></p>
 		</div>
 	</div>
 

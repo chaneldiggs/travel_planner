@@ -1,26 +1,79 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-	<p><%= image_tag @trip.image %></p>
+	<div class="col-md-3">
+		<p><%= image_tag @trip.image %></p>
 
-	<h1><%= @trip.name %></h1>
+		<h1><%= @trip.name %></h1>
 
-	<p>
-	  <%= @trip.dates %>
-	</p>
+		<p>
+		  <%= @trip.dates %>
+		</p>
 
-	<p>
-	  <%= @trip.city %>, <%= @trip.country %>
-	</p>
+		<p>
+		  <%= @trip.city %>, <%= @trip.country %>
+		</p>
 
-	<p>
-	  Departing flight #: <%= @trip.departing_flight %>
-	</p>
+		<p>
+		  Departing flight #: <%= @trip.departing_flight %>
+		</p>
 
-	<p>
-	  Return flight #: <%= @trip.return_flight %>
-	</p>
+		<p>
+		  Return flight #: <%= @trip.return_flight %>
+		</p>
 
-	<%= link_to 'Edit', edit_trip_path(@trip) %> |
-	<%= link_to 'Destroy', @trip, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> 
+		<%= link_to 'Edit', edit_trip_path(@trip) %> |
+		<%= link_to 'Destroy', @trip, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> 
+	</div>
+
+	<div class="col-md-2 col-md-offset-1 center">
+		<p><%= image_tag "daniel.jpeg", class: "contact-pics" %></p>
+		<p>
+			<strong>Daniel: 404-404-4444</strong>
+		</p>
+		<p>daniel@gmail.com</p>		<p>Emergency Contact:</p>
+		<p>404-404-4044 (Mom)</p>
+	</div>
+
+	<div class="col-md-2 col-md-offset-1 center">
+		<p><%= image_tag "suzie.png", class: "contact-pics" %></p>
+		<p>
+			<strong>Suzie: 770-819-2039</strong>
+		</p>
+		<p>suzie@gmail.com</p>
+		<p>Emergency Contact:</p>
+		<p>678-394-0984 (Dad)</p>
+	</div>
+
+	<div class="col-md-2 col-md-offset-1 center">
+		<p><%= image_tag "michael.png", class: "contact-pics" %></p>
+		<p>
+			<strong>Michael: 404-111-1111</strong>
+		</p>
+		<p>suzie@gmail.com</p>
+		<p>Emergency Contact:</p>
+		<p>770-777-7070 (Sister)</p>
+	</div>
+	
+	<div class="col-md-8 itinerary">
+		<p><strong>Dec. 28th:</strong> Arrive in Bali @ 8pm </p>
+		<p><strong>Dec. 29th:</strong> Cave Boat Tour </p>
+		<p><strong>Dec. 30th:</strong> Mount Batur </p>
+		<p><strong>Dec. 31st:</strong> Uluwatu Temple </p>
+
+	</div>
+
+
+	<div class="col-md-8 col-md-offset-1">
+		<div class="row show-row">
+			<%= image_tag "bali1.jpeg", class: "show-images" %>
+			<%= image_tag "bali2.jpeg", class: "show-images" %>
+			<%= image_tag "bali4.jpeg", class: "show-images" %>
+		</div>
+		<div class="row show-row">	
+			<%= image_tag "bali6.jpeg", class: "show-images" %>
+			<%= image_tag "bali5.jpeg", class: "show-images" %>
+			<%= image_tag "bali3.jpeg", class: "show-images" %>
+		</div>
+	</div>
 </div>
