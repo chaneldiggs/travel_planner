@@ -19,16 +19,13 @@
  @import "bootstrap-datetimepicker";
  @import "font-awesome";
 
-body {
-	background-color: #4b4a4a;
-	color: black;
-}
 
-/*#atlanta_test {
+
+body.homepage {
 	height: 100%;
-	background: url(<%= asset_path "atl.jpeg" %>), no-repeat center center fixed;
+	background: url(<%= asset_path "cave2.jpg" %>) no-repeat center center fixed;
 	background-size: cover;
-}*/
+}
 
 
 .world_map {
@@ -43,8 +40,15 @@ body {
 	text-align: center;
 }
 
+.middle-center {
+	margin-top: 300px;
+}
+
+
 .vertical_center {
 	vertical-align: middle;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .right {
@@ -74,7 +78,19 @@ body {
 .images {
 	display: block;
 	width: 100%;
+	height: 150px;
 	overflow: hidden;
+	position: relative;
+}
+
+.homepage-images {
+	display: block;
+	width: 150px;
+	height: 150px;
+}
+
+.trip-photo {
+	width: 250px;
 }
 
 .globe {
@@ -83,12 +99,16 @@ body {
 }
 
 .well {
-	background-color: rgba(139, 138, 138, 0.8);
+	opacity: .4;
+}
+
+.homepage-well {
+	opacity: .8;
 }
 
 .trip-link {
 	text-decoration: none;
-	color: #900C3F;
+	color: black;
 }
 
 .add-trip-link {
@@ -96,14 +116,31 @@ body {
 	color: white;
 }
 
+
 #invisible {
 	display: none;
+}
+
+#homepage-header {
+	margin-bottom: 0;
 }
 
 .destination_header {
 	height: 60px;
 }
 
+.location-header {
+	border-top-style: solid;
+	border-bottom-style: solid;
+}
 
+.weather {
+	border-style: solid;
+	border-color: silver;
+}
 
-
+.trip-well {
+	border-style: solid;
+	border-color: silver;
+	padding: 10px;
+}

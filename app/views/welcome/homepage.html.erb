@@ -1,72 +1,74 @@
-<div id="load_pg" class="center">
-		<h1>Let's Explore!</h1>
-		<%= image_tag "spinning_globe.gif", class:"globe"%>
-</div>
-
-<div class="invisible" id="sample_destinations">
-	<div class ="container">
-		<p class="right">
-			<%= link_to "My Trips", trips_path %>
-		</p>
-		<div class="row destination_header">
-			<div class="center">
-				<h1>Sample Destinations</h1>
-				<p class="center">&#42;Want to Slide Page to the Left/Right and Center/Extend the Map&#42;</p>
+<body class="homepage">	
+	<div id="homepage-header" class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div id="load_pg" class="well center">
+					<h1>Let's Explore!</h1>
 			</div>
-		</div>
+		</div>	
+	</div>
 
-		<div class="row center">
-			<div class="col-md-12 center">
-				<div class="panel-body" id="map-canvas"></div>
-			</div>		
-		</div>
+	<div class="invisible" id="sample_destinations">
+		<div class ="container">
 
-		<div class="row center">
-			<div class="col-md-4">
-				<div class="well" id="atlanta_box">
-					<%= image_tag "atl.jpeg", class: "images" %>
-					<%= image_tag "atl_stone_mtn.jpeg", class: "images" %>
-					<%= image_tag "ga_aquarium.jpeg", class: "images" %>
-					<h3> Atlanta, Georgia </h3>
+			<div class="row destination_header">
+				<div class="center">
+					<h1>Sample Destinations</h1>
 				</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="well" id="caracas_box">
-					<%= image_tag "caracas_monument.jpeg", class: "images" %>
-					<%= image_tag "caracas_teleferico.jpeg", class: "images" %>
-					<%= image_tag "caracas_view.jpeg", class: "images" %>
-					<h3> Caracas, Venezuela </h3>
+			<div class="row center">
+				<div class="col-md-12 center">
+					<div class="panel-body" id="map-canvas"></div>
+				</div>		
+			</div>
+
+			<div class="row center">
+				<div class="col-md-4">
+					<div class="well homepage-well" id="atlanta_box">
+						<%= image_tag "atl.jpeg", class: "images" %>
+						<%= image_tag "atl_stone_mtn.jpeg", class: "images" %>
+						<%= image_tag "ga_aquarium.jpeg", class: "images" %>
+						<h3> Atlanta, Georgia </h3>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="well homepage-well" id="caracas_box">
+						<%= image_tag "caracas_monument.jpeg", class: "images" %>
+						<%= image_tag "caracas_teleferico.jpeg", class: "images" %>
+						<%= image_tag "caracas_view.jpeg", class: "images" %>
+						<h3> Caracas, Venezuela </h3>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="well homepage-well" id="london_box">
+						<%= image_tag "london.jpeg", class: "images" %>
+						<%= image_tag "london_eye.jpeg", class: "images" %>
+						<%= image_tag "london_stonehenge.jpeg", class: "images" %>
+						<h3> London, UK </h3>
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="well" id="london_box">
-					<%= image_tag "london.jpeg", class: "images" %>
-					<%= image_tag "london_eye.jpeg", class: "images" %>
-					<%= image_tag "london_stonehenge.jpeg", class: "images" %>
-					<h3> London, United Kingdom </h3>
+			<div class="row center">
+				<div class="col-md-4">
+					<div class="well homepage-well" id="nairobi_box">
+						<%= image_tag "nairobi_natl_museum.jpeg", class: "images" %>
+						<%= image_tag "nairobi_natl_park.jpeg", class: "images" %>
+						<%= image_tag "nairobi_view.jpeg", class: "images" %>
+						<h3> Nairobi, Kenya </h3>
+					</div>
 				</div>
-			</div>
-		</div>
-
-		<div class="row center">
-			<div class="col-md-4">
-				<div class="well" id="nairobi_box">
-					<%= image_tag "nairobi_natl_museum.jpeg", class: "images" %>
-					<%= image_tag "nairobi_natl_park.jpeg", class: "images" %>
-					<%= image_tag "nairobi_view.jpeg", class: "images" %>
-					<h3> Nairobi, Kenya </h3>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="well" id="bali_box">
-					<%= image_tag "bali.jpeg", class: "images" %>
-					<%= image_tag "bali_waterpark.jpeg", class: "images" %>
-					<%= image_tag "bali_ocean.jpeg", class: "images" %>
-					<h3> Bali, Indonesia </h3>
+				<div class="col-md-4">
+					<div class="well homepage-well" id="bali_box">
+						<%= image_tag "bali.jpeg", class: "images" %>
+						<%= image_tag "bali_waterpark.jpeg", class: "images" %>
+						<%= image_tag "bali_ocean.jpeg", class: "images" %>
+						<h3> Bali, Indonesia </h3>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</body>

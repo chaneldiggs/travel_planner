@@ -16,6 +16,7 @@ class TripsController < ApplicationController
     @trip.update(trip_params)
   end
 
+ 
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
@@ -34,6 +35,6 @@ class TripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.require(:trip).permit(:name, :dates, :return_date, :city, :country, :departing_flight, :return_flight)
+      params.require(:trip).permit(:name, :dates, :return_date, :city, :country, :departing_flight, :return_flight, :image)
     end
 end

@@ -1,39 +1,38 @@
 <div class="container" id="atlanta_test">	
 	<p class="right">
-			<%= link_to "My Trips", trips_path %>
+			<%= link_to trips_path do %>
+			<i class="fa fa-calendar"></i> My Trips
+			<% end %>
 	</p>
 
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel-body" id="map-canvas2"></div>
-			<div class="panel-body" id="map-canvas3"></div>
-		</div>		
-	</div>
-
 	<div class="row center">
-		<% if @state != nil %>
-			<h1><%= "#{@city}, #{@state}" %></h1>
-		<% else %>
-			<h1><%= "#{@city}, #{@country}" %></h1>
-		<% end %>	
-		<h4><%= @local_time %></h4>
-		<p>&#42;Need to replace the background&#42;</p>
+		<div class="col-md-12 location-header">
+			<% if @state != nil %>
+				<h1><%= "#{@city}, #{@state}" %></h1>
+			<% else %>
+				<h1><%= "#{@city}, #{@country}" %></h1>
+			<% end %>	
+			<h4><%= @local_time %></h4>
+		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-4">
-			<div class="well center">
+			<div class="panel-body" id="map-canvas2"></div>
+			<div class="panel-body" id="map-canvas3"></div>
+		</div>		
+
+		<div class="col-md-4">
+			<div class="center weather">
 				<h1><%= @temp_f.to_i %>&deg; F</h1>
 				<p><%= @weather_words %> <%= image_tag @weather_icon %></p>
 				<p><%= link_to "Full Forecast", @forecast_link, target: "blank" %></p>
 			</div>
 		</div>
-	</div>
 
 
-	<div class="row">
 		<div class="col-md-4">
-			<div class="well">
+			<div>
 				<% case @city %>
 					<% when "Atlanta" %>
 						<a class="twitter-timeline"  href="https://twitter.com/hashtag/atlanta" data-widget-id="789589526893256704">#Atlanta Tweets</a>

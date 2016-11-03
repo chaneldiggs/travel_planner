@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= @trip.name %></strong>
-</p>
+<div class="container">
+	<p><%= image_tag @trip.image %></p>
 
-<p>
-  <%= @trip.dates %>
-</p>
+	<h1><%= @trip.name %></h1>
 
-<p>
-  <%= @trip.city %>, <%= @trip.country %>
-</p>
+	<p>
+	  <%= @trip.dates %>
+	</p>
 
-<p>
-  Departing flight #: <%= @trip.departing_flight %>
-</p>
+	<p>
+	  <%= @trip.city %>, <%= @trip.country %>
+	</p>
 
-<p>
-  Return flight #: <%= @trip.return_flight %>
-</p>
+	<p>
+	  Departing flight #: <%= @trip.departing_flight %>
+	</p>
 
-<%= link_to 'Edit', edit_trip_path(@trip) %> |
-<%= link_to 'Destroy', @trip, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', trips_path %>
+	<p>
+	  Return flight #: <%= @trip.return_flight %>
+	</p>
+
+	<%= link_to 'Edit', edit_trip_path(@trip) %> |
+	<%= link_to 'Destroy', @trip, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> 
+</div>

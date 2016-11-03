@@ -1,5 +1,8 @@
-	<div class="col-md-4">
-		<div class="well trip-well">
+	<div class="col-md-6">
+		<div class="trip-well center">
+			<% if trip.image != nil %>
+				<%= image_tag trip.image, class: "trip-photo" %>
+			<% end %>
 			<h3><%= link_to trip.name, trip, class: "trip-link" %></h3>
 			<%= trip.dates %>
 			<%= trip.return_date %>
