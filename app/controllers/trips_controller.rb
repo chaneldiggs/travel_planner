@@ -2,6 +2,8 @@ class TripsController < ApplicationController
   before_action :all_trips, only: [:index, :create, :update, :destroy]
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+  
 
   def new
     @trip = Trip.new
