@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031160643) do
+ActiveRecord::Schema.define(version: 20161109010401) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "em_contact"
+    t.text     "notes"
+    t.string   "image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "trip_id"
+    t.string   "em_number"
+  end
+
+  create_table "itineraries", force: :cascade do |t|
+    t.string   "date"
+    t.string   "activity"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "trip_id"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "em_contact"
+    t.string   "em_number"
+    t.string   "notes"
+    t.string   "image"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "trip_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "user_id"
+    t.integer  "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "trips", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161031160643) do
     t.datetime "updated_at",       null: false
     t.string   "image"
     t.string   "return_date"
+    t.string   "user_id"
   end
 
   create_table "users", force: :cascade do |t|

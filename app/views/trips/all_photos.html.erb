@@ -1,0 +1,4 @@
+<% @photos.each do |photo| %>
+	<%= image_tag photo.image, class: "show-images" %>
+	<%= link_to "Delete Photo", delete_photo_path(id: photo.id), data: { confirm: 'Are You Sure?'} %>
+<% end %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Contact', new_contact_path %>
+
+<h1>Contacts</h1>
+
+<div class="container">
+  <div class="row">
+    <% @contacts.each do |contact| %>
+      <div class="col-md-3 right">
+        <p><%= image_tag contact.image %></p>
+        <p><strong><%= link_to contact.name, contact %></strong></p>
+        <p><%= contact.phone_number %></p>
+        <p><%= contact.email %></p>
+      </div>
+    <% end %> 
+  </div>
+</div>
+
+
+<br>
+

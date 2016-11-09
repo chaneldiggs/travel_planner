@@ -2,7 +2,6 @@
 
 <div class="container">
 	<div class="col-md-3">
-		<p><%= image_tag @trip.image %></p>
 
 		<h1><%= @trip.name %></h1>
 
@@ -22,8 +21,7 @@
 		  Return flight #: <%= @trip.return_flight %>
 		</p>
 
-		<%= link_to 'Edit', edit_trip_path(@trip) %> |
-		<%= link_to 'Destroy', @trip, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
 	</div>
 
 	<div class="col-md-2 col-md-offset-1 center">
@@ -36,13 +34,20 @@
 	</div>
 
 	<div class="col-md-2 col-md-offset-1 center">
-		<p><%= image_tag "suzie.png", class: "contact-pics" %></p>
-		<p>
-			<strong>Suzie: 770-819-2039</strong>
-		</p>
-		<p>suzie@gmail.com</p>
-		<p>Emergency Contact:</p>
-		<p>678-394-0984 (Dad)</p>
+		<%= form_tag(create_partner_path) do %>
+			<p><%= text_area_tag :name, nil, placeholder: "Name" %></p>
+			<p><%= text_area_tag :phone_number, nil, placeholder: "Phone Number" %></p>
+			<p><%= text_area_tag :email, nil, placeholder: "Email" %></p>
+			<p>Emergency Contact:</p>
+			<p><%= text_area_tag :em_contact, nil, placeholder: "Name" %></p>
+			<p><%= text_area_tag :em_number, nil, placeholder: "Number" %></p>
+			<p><%= text_area_tag :notes, nil, placeholder: "Notes. . ." %></p>
+			<p><%= file_field_tag :image %></p>
+			<p><%= hidden_field_tag :user_id, current_user_id %></p>
+			<p><%= hidden_field_tag :trip_id, @trip.id %></p>
+			<p><%= submit_tag "Submit", class: "btn btn-primary" %></p>
+
+
 	</div>
 
 	<div class="col-md-2 col-md-offset-1 center">
@@ -56,24 +61,51 @@
 	</div>
 	
 	<div class="col-md-8 itinerary">
-		<p><strong>Dec. 28th:</strong> Arrive in Bali @ 8pm </p>
-		<p><strong>Dec. 29th:</strong> Cave Boat Tour </p>
-		<p><strong>Dec. 30th:</strong> Mount Batur </p>
-		<p><strong>Dec. 31st:</strong> Uluwatu Temple </p>
+		<div class="row">
+			<p class="right" id="add_activity"><i class="fa fa-plus"></i> Activities</p>
+			<h4>Itinerary:</h4>
+			<% @trip.itineraries.each do |itinerary| %>
+				<p>
+					<strong><%= itinerary.date %> :</strong> <%= itinerary.activity %>    
+					<%= link_to "Delete", delete_itinerary_path(id: itinerary.id), data: { confirm: 'Remove Activity?'} %>		
+				</p>
+			<% end %>
+		
+		</div>
 
+		<div id="new_activity" class="invisible">
+			<%= form_tag(create_itinerary_path) do %>
+				<p><%= text_area_tag :date, nil, placeholder: "Date & Time" %></p>
+				<p><%= text_area_tag :activity, nil, placeholder: "Description" %></p>
+				<p><%= hidden_field_tag :user_id, current_user.id %></p>
+				<p><%= hidden_field_tag :trip_id, @trip.id %></p>
+				<p><%= submit_tag "Submit", class: "btn btn-primary" %></p>
+			<% end %>
+		</div>
 	</div>
 
 
 	<div class="col-md-8 col-md-offset-1">
-		<div class="row show-row">
-			<%= image_tag "bali1.jpeg", class: "show-images" %>
-			<%= image_tag "bali2.jpeg", class: "show-images" %>
-			<%= image_tag "bali4.jpeg", class: "show-images" %>
+		<div class="row">
+			<p class="right" id="add_photo"><i class="fa fa-plus"></i> Photos</p>
 		</div>
-		<div class="row show-row">	
-			<%= image_tag "bali6.jpeg", class: "show-images" %>
-			<%= image_tag "bali5.jpeg", class: "show-images" %>
-			<%= image_tag "bali3.jpeg", class: "show-images" %>
+		<div class="row show-row">
+			<p>
+				<% @trip.photos.each do |photo| %>
+					<%= link_to all_photos_path(id: @trip.id) do%>
+						<%= image_tag photo.image, class: "show-images" %>
+					<% end %>
+				<% end %>
+			</p>
+
+			<div class="invisible center" id="photo_form">
+				<%= form_tag(upload_photo_path) do %>
+					<p><%= file_field_tag :image %>
+					<%= hidden_field_tag :user_id, current_user.id %>
+					<%= hidden_field_tag :trip_id, @trip.id %>
+					<%= submit_tag "Submit", class: "btn btn-primary" %></p>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="col-md-3">
+    <p><%= image_tag @contact.image %></p>
+
+    <p><strong><%= @contact.name %></strong></p>
+
+    <p><%= @contact.phone_number %></p>
+
+    <p><%= @contact.email %></p> <br />
+
+    <p>Emergency Contact:</p>
+    <p><%= @contact.em_contact %></p> 
+
+    <p><%= @contact.em_number %></p><br />
+
+    <p>Notes:</p>
+    <p><%= @contact.notes %></p>
+
+    
+    <p><%= link_to 'Edit', edit_contact_path(@contact) %> | <%= link_to 'Delete Contact', @contact, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+  </div>
+</div>

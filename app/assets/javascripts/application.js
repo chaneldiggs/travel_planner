@@ -81,6 +81,15 @@ $(document).ready(function (){
 	  	$("#sample_destinations").removeClass("invisible")
   });
 
+  $("#add_photo").click(function() {
+  	$("#photo_form").removeClass("invisible")
+  });
+
+  $("#add_activity").click(function() {
+  	$("#new_activity").removeClass("invisible")
+  });
+
+
   $('#atlanta_box').click(function(){
   	window.location.href = "test?city=Atlanta&state=GA&lat=33.751703&lng=-84.389920";
   })	

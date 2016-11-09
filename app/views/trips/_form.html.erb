@@ -1,35 +1,39 @@
 <%= form_for @trip, remote: true, authenticity_token: true do |f| %>
   <div class="center">
-  <div class="form-group">
-    <%= f.text_field :name, placeholder: "Name This Trip. . ", class:"form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: "Name This Trip. . ", autofocus: true, class:"form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.text_field :dates, id: "datetimepicker1", placeholder: "Dates", class:"form-control datetimepicker1" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :dates, id: "datetimepicker1", placeholder: "Dates", class:"form-control datetimepicker1" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.text_field :return_date, id: "datetimepicker1", placeholder: "Return Date", class:"form-control datetimepicker1" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :return_date, id: "datetimepicker1", placeholder: "Return Date", class:"form-control datetimepicker1" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.text_field :city, placeholder: "City", class:"form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :city, placeholder: "City", class:"form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.text_field :country, placeholder: "Country", class:"form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :country, placeholder: "Country", class:"form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.text_field :departing_flight, placeholder: "Departing Flight #:", class:"form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :departing_flight, placeholder: "Departing Flight #:", class:"form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.text_field :return_flight, placeholder: "Return Flight #:", class:"form-control" %>
-  </div>
+    <div class="form-group">
+      <%= f.text_field :return_flight, placeholder: "Return Flight #:", class:"form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form_group">
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
