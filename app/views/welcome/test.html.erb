@@ -3,89 +3,124 @@
 	<div class="row center">
 		<div class="col-md-12 location-header">
 			<% if @state != nil %>
-				<h1><%= "#{@city}, #{@state}" %></h1>
+				<h1><%= "#{@obs_city}, #{@obs_state}" %></h1>
 			<% else %>
-				<h1><%= "#{@city}, #{@country}" %></h1>
+				<h1><%= "#{@obs_city}, #{@obs_country}" %></h1>
 			<% end %>	
 			<h4><%= @local_time %></h4>
 		</div>
 	</div>
 
 	
-	<div class="row">
-		<div class="col-md-4 bottom_margin">
-			<div class="center border">
-				<h2>Current Weather :</h2>
-				<h3>
-					<%= @weather_words %> <%= image_tag @weather_icon %>
-					<%= @temp_f.to_i %>&deg; F
-				</h3> 
-				<p><%= link_to "Full Forecast", @forecast_link, target: "blank" %></p>
-			</div>
-		</div>
-
-		<div class="col-md-4 outer_map_div right">
-			<div class="panel-body timeline_photo" id="map-canvas2"></div>
-		</div>	
-
-		<div class="col-md-4 right bottom_margin">
-			<div class="border">
-				<% case @city %>
-					<% when "Atlanta" %>
-						<a class="twitter-timeline"  href="https://twitter.com/hashtag/atlanta" data-widget-id="789589526893256704">#Atlanta Tweets</a>
-					<% when "Caracas" %>
-				   	<a class="twitter-timeline"  href="https://twitter.com/hashtag/caracas" data-widget-id="793629432212754432">#caracas Tweets</a>
-				  <% when "Nairobi"%>
-				    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Nairobi" data-widget-id="793987355774513152">#Nairobi Tweets</a>
-				  <% when "London"%>
-				    <a class="twitter-timeline"  href="https://twitter.com/hashtag/London" data-widget-id="793634642654101504">#London Tweets</a>
-				  <% when "Bali"%>
-				    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Bali" data-widget-id="793634811948720128">#Bali Tweets</a>
-			  <% end %>
-			 	
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
-		</div>
-
-
-		<div class="col-md-4 bottom_margin">
-			<% case @city %>
-				<% when "Atlanta" %>
-					<%= image_tag 'atl_stone_mtn.jpeg', class:"img-responsive timeline_photo" %>
-				<% when "Caracas" %>
-					<%= image_tag 'caracas_view.jpeg', class:"img-responsive timeline_photo" %>
-				<% when "Nairobi" %>
-					<%= image_tag 'nairobi_natl_park.jpg', class:"img-responsive timeline_photo" %>
-				<% when "London" %>
-					<%= image_tag 'london_museum.jpeg', class:"img-responsive timeline_photo" %>
-				<% when "Bali" %>
-					<%= image_tag 'bali5.jpeg', class:"img-responsive timeline_photo" %>
-			<% end %>
-		</div>
-
-		<div class="col-md-4 border bottom_margin">
-			<p>Enter Flight Info Here</p>
-			<p>Filler textttt...</p>
-			<p>Filler textttt...</p>
-			<p>Filler textttt...</p>
-			<p>Filler textttt...</p>
-		</div>
-
-		<div class="col-md-4 bottom_margin right">
-			<% case @city %>
-				<% when "Atlanta" %>
-					<%= image_tag 'atl_mlk_sign.jpeg', class:"img-responsive timeline_photo" %>
-				<% when "Caracas" %>
-					<%= image_tag 'caracas_teleferico.jpeg', class:"img-responsive timeline_photo" %>
-				<% when "Nairobi" %>
-					<%= image_tag 'nairobi_view.jpg', class:"img-responsive timeline_photo" %>
-				<% when "London" %>
-					<%= image_tag 'london_stonehenge.jpg', class:"img-responsive timeline_photo" %>
-				<% when "Bali" %>
-					<%= image_tag 'bali4.jpeg', class:"img-responsive timeline_photo" %>
-			<% end %>
+	<div class="col-md-4 bottom_margin">
+		<div class="center border">
+			<h2>Current Weather :</h2>
+			<h3>
+				<%= @weather_words %> <%= image_tag @weather_icon %>
+				<%= @temp_f.to_i %>&deg; F
+			</h3> 
+			<p><%= link_to "Full Forecast", @forecast_link, target: "blank" %></p>
 		</div>
 	</div>
+
+	<div class="col-md-4 bottom_margin right">
+		<div class="border">
+			<% case @city %>
+				<% when "Atlanta" %>
+					<a class="twitter-timeline"  href="https://twitter.com/hashtag/atlanta" data-widget-id="789589526893256704">#Atlanta Tweets</a>
+				<% when "Caracas" %>
+			   	<a class="twitter-timeline"  href="https://twitter.com/hashtag/caracas" data-widget-id="793629432212754432">#caracas Tweets</a>
+			  <% when "Nairobi"%>
+			    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Nairobi" data-widget-id="793987355774513152">#Nairobi Tweets</a>
+			  <% when "London"%>
+			    <a class="twitter-timeline"  href="https://twitter.com/hashtag/London" data-widget-id="793634642654101504">#London Tweets</a>
+			  <% when "Bali"%>
+			    <a class="twitter-timeline"  href="https://twitter.com/hashtag/Bali" data-widget-id="793634811948720128">#Bali Tweets</a>
+		  <% end %>
+		 	
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
+		
+
+	<div class="col-md-4 bottom_margin">
+		<% case @city %>
+			<% when "Atlanta" %>
+				<%= image_tag 'atl_stone_mtn.jpeg', class:"img-responsive timeline_photo" %>
+			<% when "Caracas" %>
+				<%= image_tag 'caracas_view.jpeg', class:"img-responsive timeline_photo" %>
+			<% when "Nairobi" %>
+				<%= image_tag 'nairobi_natl_park.jpg', class:"img-responsive timeline_photo" %>
+			<% when "London" %>
+				<%= image_tag 'london_museum.jpeg', class:"img-responsive timeline_photo" %>
+			<% when "Bali" %>
+				<%= image_tag 'bali5.jpeg', class:"img-responsive timeline_photo" %>
+		<% end %>
+	</div>
+
+	<div class="col-md-4">
+		<div id="mmd-flight-widget"></div> 
+			<script type="text/javascript">(function initWidget() {
+				var options = {	
+					layout: {	
+						theme: "momondo"
+						, width: "300"	
+						, height: "250"	
+					},					
+					airports: {			
+						origin: "ATL",	
+						destination: ""	
+					},					
+					settings: {			
+						openNewWindow: true,	
+						domain: "www.momondo.com",		
+						source: ""			
+					}								
+				};									
+				var settings = options.settings;	
+				var airports = options.airports;	
+				var layout = options.layout;		
+				var encoding = null;				
+				onWidgetLoad = function (f)			
+				{									
+					f("mmd-flight-widget", {		
+						searchForms: [{				
+							type: 1,				
+							searchURL: "http://[DOMAIN][PATH][QUERY]" + (!!settings.source ? "&source=" + settings.source : ""),	
+							openNewWindow: settings.openNewWindow,				
+							currency: settings.currency,						
+							segments: [											
+								{												
+									airports: [									
+										{ code: airports.origin || "" },		
+										{ code: airports.destination || "" }	
+									]											
+								},												
+								{												
+									airports: [									
+										{ code: airports.destination || "" },	
+										{ code: airports.origin || "" }		 	
+									]	
+								}		
+							]			
+						}]				
+					});					
+				};						
+				var scr = document.createElement("script");
+				scr["src"] = "http://" + settings.domain + "/widget/searchform/v1.0/?dimensions=" + (layout.width && layout.height ? (layout.width + "x" + layout.height) : "generic") + "&types=1&callback=onWidgetLoad&theme=" + layout.theme;	
+				var tag = document.getElementsByTagName("head");	
+				if (tag && tag.length)		
+				{							
+					tag = tag[0];			
+					tag.appendChild(scr);	
+				}							
+			})();
+			 </script>
+	</div>
+
+	<div class="col-md-4 outer_map_div">
+		<div class="panel-body timeline_photo" id="map-canvas2"></div>
+	</div>	
 </div>
 
 
@@ -98,7 +133,7 @@
 	  	
 		var mapOptions = {
 	  center: location,
-	  zoom: 10,
+	  zoom: 12,
 	  scrollwheel: false
 	  };
 

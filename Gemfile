@@ -22,7 +22,7 @@ gem 'devise'
 
 gem 'wunderground'
 gem 'httparty'
-
+gem 'rest-client', '~> 1.8'
 gem 'carrierwave'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
