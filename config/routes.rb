@@ -22,5 +22,9 @@ Rails.application.routes.draw do
 
   get 'delete_photo' => 'trips#delete_photo'
 
+  post 'create_partner' => 'trips#create_partner'
+
+  get 'delete_partner' => 'trips#delete_partner'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

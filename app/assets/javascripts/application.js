@@ -78,15 +78,22 @@ $(document).ready(function (){
 
   $("#load_pg").click(function() {
   	$(this).slideUp()
-	  	$("#sample_destinations").removeClass("invisible")
+	  $("#sample_destinations").removeClass("invisible")
   });
 
   $("#add_photo").click(function() {
+    $("#photo").replaceWith($("#photo_form"))
   	$("#photo_form").removeClass("invisible")
   });
 
   $("#add_activity").click(function() {
+    $("#activity").replaceWith($("#new_activity"))
   	$("#new_activity").removeClass("invisible")
+  });
+
+  $("#add_partner").click(function() {
+    $("#partner").replaceWith($("#new_partner"))
+    $("#new_partner").removeClass("invisible")
   });
 
 

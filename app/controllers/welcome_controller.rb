@@ -31,5 +31,25 @@ class WelcomeController < ApplicationController
   	@forecast_link = response['current_observation']['forecast_url']
     @local_time = response['current_observation']['local_time_rfc822']
 
+
+    # request = HTTParty.get("https://www.googleapis.com/qpxExpress/v1/trips/search?fields=trips&key=#{ENV['google_qpx_api_key']}.json")
+    #   {
+    #     "request": {
+    #       "passengers": {
+    #         "adultCount": "1"
+    #       },
+    #       "saleCountry": "US",
+    #       "solutions": "5",
+    #       "slice": [
+    #         {
+    #           "origin": "ATL",
+    #           "destination": "LAX",
+    #           "date": "2016-12-27"
+    #         }
+    #       ]
+    #     }
+    #   }
+
+  
   end
 end

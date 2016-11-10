@@ -4,6 +4,16 @@ class TripsController < ApplicationController
 
   before_filter :authenticate_user!
 
+  def create_partner
+    Partner.create(name: params[:name], phone_number: params[:phone_number], email: params[:email], em_contact: params[:em_contact], em_number: params[:em_number], notes: params[:notes], image: params[:image], user_id: params[:user_id], trip_id: params[:trip_id])
+    redirect_to :back
+  end
+
+  def delete_partner
+    Partner.find(params[:id]).destroy
+    redirect_to :back
+  end
+
   def create_itinerary
     Itinerary.create(date: params[:date], activity: params[:activity], user_id: params[:user_id], trip_id: params[:trip_id])
     redirect_to :back
